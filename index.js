@@ -7,8 +7,44 @@
 
 // ======== OBJECTS DEFINITIONS ========
 // Define your objects here
+const dog = {
+  species: 'dog',
+  name: 'Toby',
+  gender: 'male',
+  legs: 4,
+  hands: 0,
+  saying: 'woof-woof!'
+};
+const cat = {
+  species: 'cat',
+  name: 'Sheldon',
+  gender: 'male',
+  legs: 4,
+  hands: 0,
+  saying: 'mrrr!'
+};
+const man = {
+  species: 'human',
+  name: 'Dmitry',
+  gender: 'male',
+  legs: 2,
+  hands: 2,
+  saying: 'Hello!'
+};
+const woman = {
+  species: 'human',
+  name: 'Lero',
+  gender: 'female',
+  legs: 2,
+  hands: 2,
+  saying: 'Bye!'
+};
 
+const inhabitantsArray = [dog, cat, man, woman];
 
+const message = (elem) => `Species: ${elem.species}. Name: ${elem.name}. Gender: ${elem.gender}. ${elem.legs} legs and ${elem.hands} hands. Phrase: ${elem.saying}`;
+
+inhabitantsArray.forEach( inh => print(message(inh)) );
 // ======== OUTPUT ========
 /* Use print(message) for output.
    Default tag for message is <pre>. Use print(message,'div') to change containing element tag.
@@ -17,7 +53,6 @@
    However, please, REFRAIN from improving visuals at least until your code is reviewed
    so code reviewers might focus on a single file that is index.js.
    */
-
 /* Print examples:
    print('ABC');
    print('<strong>ABC</strong>');
