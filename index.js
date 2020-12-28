@@ -37,7 +37,3 @@ const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.sli
 
 const makeMessage = (inhabitant) => properties.map(property => `${capitalizeString(property)}: ${inhabitant[property]}`).join(' ');
 inhabitantsArray.forEach(inhabitant => print(makeMessage(inhabitant)));
-
-
-
-
