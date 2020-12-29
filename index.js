@@ -35,6 +35,15 @@ class Cat extends Inhabitant {
   }
 }
 
+class CatWoman extends Cat {
+  constructor(name) {
+    super(name, 'female');
+    this.species = 'CatWoman';
+    this.legs = 2;
+    this.hands = 2;
+  }
+}
+
 class Human extends Inhabitant {
   constructor(name, gender, saying) {
     super('human', name, gender, 2, 2, saying);
@@ -45,12 +54,12 @@ const man = new Human('Dmitry', 'male', 'Hello!');
 const woman = new Human('Lero', 'female', 'Bye!');
 const dog = new Dog('Toby', 'male');
 const cat = new Cat('Sheldon', 'male');
+const catWoman = new CatWoman('Mary');
 dog.makeFriend(cat);
 dog.makeFriend(man);
 man.makeFriend(cat);
-const inhabitantsArray = [dog, cat, man, woman];
+const inhabitantsArray = [dog, cat, man, woman, catWoman];
 
 const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
-
- inhabitantsArray.forEach(inhabitant => print(inhabitant.makeMessage()));
+inhabitantsArray.forEach(inhabitant => print(inhabitant.makeMessage()));
