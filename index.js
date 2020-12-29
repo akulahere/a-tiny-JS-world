@@ -6,7 +6,14 @@ class Inhabitant {
     this.legs = legs;
     this.hands = hands;
     this.saying = saying;
+    this.friends = Array.isArray(this.friends) ? this.friends : 'No friends' ;
   }
+
+  makeFriend(friend) {
+    this.friends = this.friends === 'No friends' ? [] : this.friends;
+    this.friends.push(friend.name);
+  }
+
   makeMessage() {
     const properties = [];
     for (const property of Object.keys(this)) {
@@ -38,6 +45,9 @@ const man = new Human('Dmitry', 'male', 'Hello!');
 const woman = new Human('Lero', 'female', 'Bye!');
 const dog = new Dog('Toby', 'male');
 const cat = new Cat('Sheldon', 'male');
+dog.makeFriend(cat);
+dog.makeFriend(man);
+man.makeFriend(cat);
 const inhabitantsArray = [dog, cat, man, woman];
 
 const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
